@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DIExercise
 {
-    public class LoanService
+    public class LoanService : ILoanService
     {
         public int CalculateAmount(int salary, int requestedLoanAmount)
         {

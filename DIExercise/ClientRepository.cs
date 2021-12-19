@@ -4,11 +4,23 @@ using System.Text;
 
 namespace DIExercise
 {
-    public class ClientRepository
+    public class ClientRepository : IClientRepository
     {
-        public void AddClient(Client client)
+        public bool AddClient(Client client)
         {
-            // ADD client to DB
+            bool isLoanGranted;
+            try
+            {
+                // ADD client to DB
+                isLoanGranted = true;
+            }
+            catch (Exception e)
+            {
+                isLoanGranted = false;
+                Console.WriteLine("Błąd podczas zapisu do bazy");
+                throw;
+            }
+            return isLoanGranted;
         }
     }
 }
